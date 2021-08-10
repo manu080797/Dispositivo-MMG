@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="Musculus.Views.ExerciseView"
+             Title="Exercise"
+             BackgroundColor="White">
+
+        <StackLayout>
+            <Label Text="{Binding CurrentExercise.ExerciseName}"
+                           FontAttributes="Bold"
+                           FontSize="Title"/>
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0">
+                    <Label Text="{Binding CurrentExercise.Weight}"
+                           FontSize="Subtitle"/>
+                    <Label Text=" kg"
+                           FontSize="Subtitle"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0">
+                    <Label Text="Exercise phase: "
+                           FontSize="Subtitle"/>
+                    <Label Text="{Binding CurrentExercisePhase}"
+                           FontSize="Subtitle"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0">
+                    <Label Text="Device status: "
+                           FontSize="Subtitle"/>
+                    <Label Text="{Binding DeviceStatus}"
+                           FontSize="Subtitle"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand">
+                    <Label Text="{Binding ElapsedSeconds}"
+                           FontAttributes="Bold"
+                           FontSize="Large"/>
+                    <Label Text=" s/ " FontSize="Large"/>
+                    <Label Text="{Binding CurrentCountDownInterval}"
+                           FontAttributes="Bold"
+                           FontSize="Large"/>
+                    <Label Text=" s" FontSize="Large" />
+            </StackLayout>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <skia:SKCanvasView PaintSurface="RenderPlotMMG" x:Name="ChartZ1" BackgroundColor="Aqua" HeightRequest="250" >
+                </skia:SKCanvasView>
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <skia:SKCanvasView PaintSurface="RenderPlotForce" x:Name="ChartZ2" BackgroundColor="Aqua" HeightRequest="250" >
+                </skia:SKCanvasView>
+            </Grid>
+
+            <Label Text="MMG" FontSize="Medium" FontAttributes="Bold"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                    <Label Text="Max. Voltage " FontSize="Small" HorizontalOptions="Start"/>
+                    <Slider x:Name="MaxVoltageSlider" Minimum="0" Maximum="1000" Value="{Binding MaxVoltage}" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding MaxVoltage}" FontSize="Small" HorizontalOptions="End"/>
+                    <Label Text=" mV" FontSize="Small" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                    <Label Text="Window Length " FontSize="Small" HorizontalOptions="Start"/>
+                    <Slider x:Name="WindowLengthSlider" Minimum="0" Maximum="4000" Value="{Binding WindowLengthZ1}" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding WindowLengthZ1}" FontSize="Small" HorizontalOptions="End"/>
+                <Label Text=" ms" FontSize="Small" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <Label Text="Force" FontSize="Medium" FontAttributes="Bold"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                    <Label Text="Max. Force " FontSize="Small" HorizontalOptions="Start"/>
+                    <Slider x:Name="MaxForceSlider" Minimum="0" Maximum="100" Value="{Binding MaxForce}" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding MaxForce}" FontSize="Small" HorizontalOptions="End"/>
+                    <Label Text=" kg" FontSize="Small" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                    <Label Text="Averaging Time " FontSize="Small" HorizontalOptions="Start"/>
+                    <Slider x:Name="AveragingTimeSlider" Minimum="0" Maximum="4000" Value="{Binding WindowLengthZ2}" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding WindowLengthZ2}" FontSize="Small" HorizontalOptions="End"/>
+                    <Label Text=" ms" FontSize="Small" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Target:" FontSize="Small" HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Entry Text="{Binding TargetForce}" WidthRequest="100" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" FontSize="Small" Keyboard="Numeric" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="False"/>
+                    <Label Text="kg" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="Center"/>
+                    <Label Text="         " FontSize="Small" HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Label Text="Bounds:" FontSize="Small" HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Entry Text="{Binding TargetForceBounds}" WidthRequest="100" FontSize="Small" HorizontalTextAlignment="Center" Keyboard="Numeric" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="False"/>
+                    <Label Text="%" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="End">
+                    <Label Text="Remaining exercises: "
+                           FontSize="Medium"/>
+                    <Label Text="{Binding RemainingExercises}"
+                           FontSize="Medium"/>
+            </StackLayout>
+        </StackLayout>
+
+</ContentPage>

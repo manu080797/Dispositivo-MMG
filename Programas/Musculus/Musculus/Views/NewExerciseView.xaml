@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Musculus.Views.NewExerciseView"
+             xmlns:viewModels="clr-namespace:Musculus.ViewModels">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+                    <Label Text="New exercise" FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Exercise: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry Placeholder="-"
+                               WidthRequest="300"
+                               HorizontalTextAlignment="Center"
+                               MaxLength="30"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Text"
+                               Text="{Binding CurrentExercise.ExerciseName}"
+                               FontSize="Small"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Weight: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.Weight}"
+                               FontSize="Small"/>
+                        <Label Text=" kg" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Set-Up time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="setupTimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.SetUpTime}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Initial static time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="staticTimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.InitialStaticTime}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Transition to exercise time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="transition1TimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.TransitionTimeToExercise}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Exercise time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="exerciseTimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.ExerciseDuration}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Transition to rest time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="transition2TimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.TransitionTimeToRest}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Rest time: " FontSize="Small" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="restTimeEntry"
+                               Placeholder="0"
+                               WidthRequest="80"
+                               HorizontalTextAlignment="Center"
+                               ClearButtonVisibility="WhileEditing"
+                               Keyboard="Numeric"
+                               Text="{Binding CurrentExercise.RestTime}"
+                               FontSize="Small"/>
+                        <Label Text=" s" FontSize="Small" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <Button x:Name="addExerciseButton" Text="Add" Command="{Binding AddExerciseCommand}" Clicked="AddExerciseButtonClicked"/>
+                </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

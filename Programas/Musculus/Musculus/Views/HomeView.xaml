@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Musculus.ViewModels"
+             x:Class="Musculus.Views.HomeView"
+             Title="Home"
+             Icon="HomeIcon"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <viewModels:HomeViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+            <StackLayout>
+            <ListView ItemsSource="{Binding ExerciseList}" HeightRequest="300" VerticalScrollBarVisibility="Always" RowHeight="80">
+
+                <ListView.Header>
+                    <Label Text="Exercise list" FontAttributes="Bold"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="{Binding ExerciseName}" FontAttributes="Bold"/>
+                                    <Label Text=" - " FontAttributes="Bold"/>
+                                    <Label Text="{Binding Weight}" FontAttributes="Bold"/>
+                                    <Label Text=" kg" FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="Set-Up "/>
+                                    <Label Text="{Binding SetUpTime}"/>
+                                    <Label Text=" s, Static "/>
+                                    <Label Text="{Binding InitialStaticTime}"/>
+                                    <Label Text=" s, Transition to exercise "/>
+                                    <Label Text="{Binding TransitionTimeToExercise}"/>
+                                    <Label Text=" s"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="Exercise: "/>
+                                    <Label Text="{Binding ExerciseDuration}"/>
+                                    <Label Text=" s, Transtion to rest "/>
+                                    <Label Text="{Binding TransitionTimeToRest}"/>
+                                    <Label Text=" s, Rest "/>
+                                    <Label Text="{Binding RestTime}"/>
+                                    <Label Text=" s"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="SU "/>
+                                    <Label Text="{Binding SetUpTime}"/>
+                                    <Label Text=" s - S "/>
+                                    <Label Text="{Binding InitialStaticTime}"/>
+                                    <Label Text=" s - T1 "/>
+                                    <Label Text="{Binding TransitionTimeToExercise}"/>
+                                    <Label Text=" s - Exercise: "/>
+                                    <Label Text="{Binding ExerciseDuration}"/>
+                                    <Label Text=" s - T2: "/>
+                                    <Label Text="{Binding TransitionTimeToRest}"/>
+                                    <Label Text=" s - Rest: "/>
+                                    <Label Text="{Binding RestTime}"/>
+                                    <Label Text=" s"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal">
+                        <Button Text="Load" Command="{Binding LoadExerciseListFromFileCommand}"/>
+                        <Button Text="Share" Command="{Binding ShareExerciseListCommand}"/>
+                        <Button Text="Clear" Command="{Binding ClearExerciseListCommand}"/>
+                        <Button Text="Add" Clicked="AddExerciseButtonClicked"/>
+                    </StackLayout>
+            <Button Text="Start" Clicked="StartButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
