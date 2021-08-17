@@ -7,3 +7,6 @@ Programas desarrollados para el dispositivo:
 - Musculus: aplicación multiplaforma programada en C# mediante el framework Xamarin. Se comunica con la placa de desarrollo mediante Bluetooth LE. Provee de una interfaz gráfica para controlar el dispositivo de adquisición y visualizar las señales en tiempo real. También permite realizar una captura y compartirla mediante la API de compartir del sistema operativo en que se ejecuta la aplicación. El único código específico de plataforma de la aplicación es el relacionado a la comunicación Bluetooth LE. Este sólo se encuentra implementado para Android, por lo que la aplicación únicamente funciona en dicha plataforma.
 
 - pyMMG: módulo de Python para procesamiento fuera de línea de las capturas tomadas con Musculus. Permite realizar un preprocesamiento para reducir ruido y filtrar ciertas componentes de frecuencia de la señal. Además, realiza una extracción sistemática de parámetros de la señal para luego ser procesados mediante técnicas de análisis de datos. Se incluye un notebook de Jupyter con un ejemplo de uso del módulo.
+
+![arquitectura](https://user-images.githubusercontent.com/25868073/129666963-c2a4404f-97a5-4211-9303-ec6cb6505003.png)
+![procesamiento_de_señal](https://user-images.githubusercontent.com/25868073/129667012-a1d064c3-ca65-4c48-862b-c19f90082375.png)
