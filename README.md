@@ -20,13 +20,13 @@ En esta tesis se desarrolló un dispositivo de adquisición de señal para mecan
 <img src="https://user-images.githubusercontent.com/25868073/129663985-bf55dc2e-1367-479e-8927-82dd2f3e256d.png" height=300/>
 <img src="https://user-images.githubusercontent.com/25868073/129663899-db05f11d-fdac-4f9c-af90-bd7b4887c755.png" height=500/>
 
-### Señales crudas
+### Señales crudas en ejercicio al fallo de la tarea solicitada
 ![image](https://user-images.githubusercontent.com/25868073/130722216-00c4366a-c1e6-4aa1-b1b0-96f9e9780158.png)
 
 ### Procesamiento de señal
 ![image](https://user-images.githubusercontent.com/25868073/130722468-d04fca79-a009-4cf8-9931-6687b8c96b8e.png) 
 
-### Señal cruda - Subbanda de frecuencia - Parámetro
+### 1) Señal cruda 2) Subbanda de frecuencia 3) Parámetro
 <img src="https://user-images.githubusercontent.com/25868073/130722654-60255e37-d29a-44b6-8112-21f1d02716a0.png" height=300/>
 
 ## Abstract
