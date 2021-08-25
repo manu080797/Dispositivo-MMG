@@ -20,7 +20,7 @@ En esta tesis se desarrolló un dispositivo de adquisición de señal para mecan
 <img src="https://user-images.githubusercontent.com/25868073/129663985-bf55dc2e-1367-479e-8927-82dd2f3e256d.png" height=300/>
 <img src="https://user-images.githubusercontent.com/25868073/129663899-db05f11d-fdac-4f9c-af90-bd7b4887c755.png" height=500/>
 
-### Señales crudas en ejercicio al fallo de la tarea solicitada
+### Señal cruda en ejercicio al fallo de la tarea solicitada
 ![image](https://user-images.githubusercontent.com/25868073/130722216-00c4366a-c1e6-4aa1-b1b0-96f9e9780158.png)
 
 ### Procesamiento de señal
